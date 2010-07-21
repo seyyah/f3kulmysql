@@ -1,25 +1,8 @@
 <?php
 
-/**
-	This application is not meant for production use. Its only purpose is to
-	serve as a sample code to help you get acquainted with the Fat-Free
-	Framework. Padding this blog software with a lot of bells and whistles
-	would be nice, but it would also make the entire learning process
-	lengthier and more complicated.
-**/
-
 // Use the Fat-Free Framework
 require_once 'lib/F3.php';
 
-/**
-	Setting the Fat-Free global variable RELEASE to TRUE will suppress stack
-	trace in HTML error page. Web server's error log will still contain
-	complete stack trace.
-
-	If you're writing your own application and still debugging it, you might
-	want to set this Fat-Free variable to FALSE. The stack trace can help
-	a lot in program testing.
-**/
 F3::set('RELEASE',FALSE);
 
 // Use custom 404 page
@@ -35,28 +18,11 @@ F3::set('FONTS','fonts/');
 F3::set('GUI','gui/');
 
 // Another way of assigning values to framework variables
-F3::mset(
-	array(
-		'site'=>'Kullanıcı Veritabanı',
-		'data'=>'db/demo.db'
-	)
-);
+F3::set('site','Kullanıcı Veritabanı');
 
 // Common inline Javascript
 F3::set('extlink','window.open(this.href); return false;');
 
-/**
-	Create database connection; The demo database is within our Web
-	directory but for production use, a non-Web accessible path is highly
-	recommended for better security.
-
-	Fat-Free allows you to use any database engine - you just need the DSN
-	so the framework knows how to communicate with it. Migrating to another
-	engine should be next to easy. If you stick to the standard SQL92
-	command set (no engine-specific extensions), you just have to change the
-	next line. For this demo, we'll use the SQLite engine, so there's no
-	need to install MySQL on your server.
-**/
 F3::set('DB',
 	array(
 		'dsn'=>'mysql:host=localhost;port=3306;dbname=f3',
@@ -65,12 +31,6 @@ F3::set('DB',
 	)
 );
 F3::call(':db');
-
-/*F3::set('DB',array('dsn'=>'sqlite:{@data}'));
-if (!file_exists(F3::get('data')))
-	// SQLite database doesn't exist; create it programmatically
-	// Call db.php inside the inc/ folder
-	F3::call(':db');*/
 
 // Define our main menu; this appears in all our pages
 F3::set('menu',
