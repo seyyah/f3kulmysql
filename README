@@ -5,3 +5,5 @@ Kullanıcı veritabanında şu an TC, Ad, Soyad alanları bulunmaktadır.
 Kullanıcı veritabanı MySQL sunucusunda `f3` veritabanındaki `kul` tablosunda tutulmaktadır.
 
 Bu veritabanı @roktas hocanın `mysql-db-olustur` betiği yardımıyla oluşturulmuştur.
+
+Depoyu çektikten sonra kişisel ayar değişikliğiniz olmadığı sürece `www` olarak değiştirip, `/var` klasörü altına taşıyın ve `$ sudo chown -R www-data:www-data /var/www` ile kullanıcı ve grup ayarını yapın.
